@@ -28,7 +28,15 @@ const Main = () => {
     } 
   };
 
-  const showBrokenText = (phrases) => {
+  const breakParagraph = (paragraph) => {
+    let phrases = paragraph.split(/[.?;-]/);
+
+    return phrases;
+  }
+
+  const showBrokenText = (paragraph) => {
+    let phrases = breakParagraph(paragraph);
+    
     const colorText = (index) => {
       const colors = ['red', 'green', 'blue'];
 
@@ -37,6 +45,8 @@ const Main = () => {
       
       return colors[0];
     };
+
+    if (phrases == "") phrases = [];
 
     return(
       <span>
@@ -53,7 +63,7 @@ const Main = () => {
   return(
     <div className="container">
       {showMainTitle(mainTitle)}
-      <div className="row">
+      <div className="row col-12">
         <div className="col-sm-6">
           <div className="card">
             <div className="card-body">
@@ -78,12 +88,12 @@ const Main = () => {
         </div>
       </div>
       <hr/>
-      <div className="row">
+      <div className="row col-12">
         <div className="col-sm-6">
           <div className="card">
             <div className="card-body">
               <span>
-                {showBrokenText(["banana", "apple", "pear"])}
+                {showBrokenText(text)}
               </span>
             </div>
           </div>
@@ -92,7 +102,7 @@ const Main = () => {
           <div className="card">
             <div className="card-body">
               <span>
-                {showBrokenText(["banana", "apple", "pear"])}
+                {showBrokenText(translation)}
               </span>
             </div>
           </div>
