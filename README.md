@@ -1,2 +1,2 @@
 # gui-translator
-A GUI to help languages studying
+A GUI (Graphical User Interface) to help english studying, offering a simple tool to compare source text with its translation.
