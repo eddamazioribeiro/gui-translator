@@ -29,7 +29,7 @@ const Main = () => {
   };
 
   const breakParagraph = (paragraph) => {
-    let phrases = paragraph.split(/[.?;-]/);
+    let phrases = paragraph.split(/(?<=[.?!;])/);
 
     return phrases;
   }
@@ -46,12 +46,15 @@ const Main = () => {
       return colors[0];
     };
 
-    if (phrases == "") phrases = [];
+    if (phrases === "") phrases = [];
 
     return(
       <span>
         {phrases.map((line, index) => (
-            <p style={{color: colorText(index), margin: 0}}>
+            <p id={index} style={{color: colorText(index), margin: 0}}>
+              <small className="text-muted">
+                {index}
+              </small>
               {line}
             </p>
           )
@@ -61,9 +64,9 @@ const Main = () => {
   };
 
   return(
-    <div className="container">
+    <div className="container col-12">
       {showMainTitle(mainTitle)}
-      <div className="row col-12">
+      <div className="row">
         <div className="col-sm-6">
           <div className="card">
             <div className="card-body">
@@ -88,7 +91,7 @@ const Main = () => {
         </div>
       </div>
       <hr/>
-      <div className="row col-12">
+      <div className="row">
         <div className="col-sm-6">
           <div className="card">
             <div className="card-body">
