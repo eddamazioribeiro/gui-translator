@@ -1,8 +1,9 @@
+import Main from './Main';
+
 function App() {
   return (
     <div className="App">
-      <h2>GUI TRANSLATOR</h2>
-      <h4>(Under construction")</h4>
+      <Main></Main>
     </div>
   );
 }
