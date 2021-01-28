@@ -46,16 +46,17 @@ const Main = () => {
       return colors[0];
     };
 
-    if (phrases === "") phrases = [];
+    if (phrases == "") phrases = [];
 
     return(
       <span>
-        {phrases.map((line, index) => (
+        {phrases.length > 0 && phrases.map((line, index) => (
             <p id={index} style={{color: colorText(index), margin: 0}}>
               <small className="text-muted">
-                {index}
+                {index + 1}
               </small>
-              {line}
+              <span>   </span>
+              {line} 
             </p>
           )
         )}
